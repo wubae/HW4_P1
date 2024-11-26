@@ -1,4 +1,3 @@
-$(document).ready(function () {
 /*
 Name: Wu Li
 Date: 11/20/2024
@@ -8,37 +7,37 @@ Wu Li, UMass Lowell Computer Science, wuhui_li@student.uml.edu
 Copyright (c) 2024 by Wu. All rights reserved. May be freely copied or 
 excerpted for educational purposes with credit to the author.
 */
-
-// Add jQuery Validation to the form
-$("#table-form").validate({
-    rules: {
-        minColumn: {
-            required: true,
-            number: true,
-            min: -50,
-            max: 50
+$(document).ready(function () {
+    // Add jQuery Validation to the form
+    $("#table-form").validate({
+        rules: {
+            minColumn: {
+                required: true,
+                number: true,
+                min: -50,
+                max: 50
+            },
+            maxColumn: {
+                required: true,
+                number: true,
+                min: -50,
+                max: 50,
+                greaterThanOrEqual: "#min-column"
+            },
+            minRow: {
+                required: true,
+                number: true,
+                min: -50,
+                max: 50
+            },
+            maxRow: {
+                required: true,
+                number: true,
+                min: -50,
+                max: 50,
+                greaterThanOrEqual: "#min-row"
+            }
         },
-        maxColumn: {
-            required: true,
-            number: true,
-            min: -50,
-            max: 50,
-            greaterThanOrEqual: "#min-column"
-        },
-        minRow: {
-            required: true,
-            number: true,
-            min: -50,
-            max: 50
-        },
-        maxRow: {
-            required: true,
-            number: true,
-            min: -50,
-            max: 50,
-            greaterThanOrEqual: "#min-row"
-        }
-    },
     messages: {
         minColumn: {
             required: "Please enter a minimum column value.",
